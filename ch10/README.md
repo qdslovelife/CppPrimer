@@ -113,5 +113,71 @@ vector<int>::const_iterator find_first_bigger(const vector<int>& v, const string
 }
 ```
 
-## exercise 10.25
+## [exercise 10.25](./10_25.cc)
 
+## exercise 10.26
+
+简单理解就是三种迭代器的插入位置不同。
+
+## [exercise 10.27](./10_27.cc)
+
+## [exercise 10.28](./10_28.cc)
+
+## [exercise 10.29](./10_29.cc)
+
+## [exercise 10.30](./10_30.cc)
+
+## [exercise 10.31](./10_31.cc)
+
+## exercise 10.32
+
+## [exercise 10.33](./10_33.cc)
+
+## [exercise 10.34](./10_34.cc)
+
+## [exercise 10.35](./10_35.cc)
+
+## exercise 10.36
+
+``` c++
+list<int> l = {1,2,3,4,5,6,7,8,9,0,6,7,8,5,0,7,8};
+auto iter = find(l.crbegin(), l.crend(), 0);
+```
+
+## [exercise 10.37](./10_37.cc)
+
+## exercise 10.38
+
+## exercise 10.39
+
+`list`的迭代器属于双向迭代器。
+
+`vector`的迭代器属于随机访问迭代器。
+
+## exercise 10.40
+
+`copy`的前两个迭代器表示输入范围，属于输入迭代器；第三个迭代器表示输出范围，属于输出迭代器。
+
+`reverse`的迭代器属于双向迭代器。
+
+`unique`的迭代器属于前向迭代器。
+
+## exercise 10.41
+
+第一个是将输入范围中的旧值用新值代替。
+
+第二个遍历输入范围，当某个元素使得谓词`pred`为真时，用新值代替。
+
+第三个将输入范围中的元素拷贝到输出范围，同时用新值代替旧值。
+
+第四个将输入范围中的元素拷贝到输出范围，同时当某个元素使得谓词`pred`为真时，用新值代替。
+
+## exercise 10.42
+
+``` c++
+void elimDups(list<int> &words)
+{
+    words.sort();
+    words.unique();
+}
+```
