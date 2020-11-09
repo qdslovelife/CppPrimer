@@ -1,3 +1,6 @@
+#ifndef _Text_Query_H
+#define _Text_Query_H
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -36,3 +39,5 @@ private:
     std::shared_ptr<std::set<size_t>> lines_;
     std::shared_ptr<std::vector<std::string>> file_;
 };
+
+#endif

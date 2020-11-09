@@ -1,3 +1,6 @@
+#ifndef _Str_Blob_H
+#define _Str_Blob_H
+
 #include <vector>
 #include <string>
 #include <initializer_list>
@@ -13,6 +16,8 @@ public:
     using size_type = std::vector<std::string>::size_type;
     StrBlob();
     StrBlob(std::initializer_list<std::string> il);
+    StrBlob(const StrBlob &item);
+    StrBlob& operator=(const StrBlob &item);
 
     size_type size() const { return data_->size(); }
     bool empty() const { return data_->empty(); }
@@ -46,3 +51,5 @@ private:
 
     std::shared_ptr<std::vector<std::string>> check(std::size_t curr, const std::string &msg) const;
 };
+
+#endif

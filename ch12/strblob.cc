@@ -17,6 +17,18 @@ StrBlob::StrBlob(initializer_list<string> il)
     : data_(make_shared<vector<string>>(il))
 {}
 
+StrBlob::StrBlob(const StrBlob &item)
+    : data_(make_shared<vector<string>>(*item.data_))
+{}
+
+StrBlob& StrBlob::operator=(const StrBlob &item)
+{
+    if(this == &item)   return *this;
+    data_.~shared_ptr();
+    data_ = make_shared<vector<string>>(*item.data_);
+    return *this;
+}
+
 void StrBlob::pop_back()
 {
     check(0, "pop_back on empty StrBlob");
