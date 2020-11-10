@@ -9,10 +9,11 @@
 #include <set>
 #include <memory>
 #include <sstream>
+#include <algorithm>
 
 class QueryResult;
 
-std::ostream& print(std::ostream& os, const QueryResult& result);
+std::ostream& operator<<(std::ostream &, const QueryResult &);
 
 class TextQuery
 {
@@ -26,7 +27,7 @@ private:
 
 class QueryResult
 {
-    friend std::ostream& print(std::ostream&, const QueryResult&);
+    friend std::ostream& operator<<(std::ostream &, const QueryResult &);
 public:
     QueryResult(const std::string &word, const std::shared_ptr<std::set<size_t>> lines, const std::shared_ptr<std::vector<std::string>> file)
         : word_(word), lines_(lines), file_(file)

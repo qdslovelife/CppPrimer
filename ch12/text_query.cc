@@ -23,6 +23,7 @@ TextQuery::TextQuery(ifstream &is)
         string word;
         while(line >> word)
         {
+            word.erase(std::remove_if(word.begin(), word.end(), &ispunct), word.end());
             auto &line_nos = word_map_[word];
             if(!line_nos)
             {
@@ -47,7 +48,7 @@ QueryResult TextQuery::query(const string &word) const
     }
 }
 
-ostream& print(ostream &os, const QueryResult &result)
+ostream& operator<<(ostream &os, const QueryResult &result)
 {
     os << result.word_ << " occurs " << result.lines_->size() << " times" << endl;
     for(auto num : *result.lines_)
